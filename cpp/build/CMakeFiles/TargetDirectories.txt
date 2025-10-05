@@ -1,0 +1,3 @@
+/workspaces/Ride-Sharing-System/cpp/build/CMakeFiles/ride_sharing_system.dir
+/workspaces/Ride-Sharing-System/cpp/build/CMakeFiles/edit_cache.dir
+/workspaces/Ride-Sharing-System/cpp/build/CMakeFiles/rebuild_cache.dir

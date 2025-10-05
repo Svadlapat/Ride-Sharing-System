@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/ride_sharing_system.dir/main.cpp.o CMakeFiles/ride_sharing_system.dir/Ride.cpp.o CMakeFiles/ride_sharing_system.dir/StandardRide.cpp.o CMakeFiles/ride_sharing_system.dir/PremiumRide.cpp.o CMakeFiles/ride_sharing_system.dir/Driver.cpp.o CMakeFiles/ride_sharing_system.dir/Rider.cpp.o -o ride_sharing_system 
