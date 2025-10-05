@@ -1,27 +1,33 @@
 # Ride Sharing System
 
-This repository contains implementations of a Ride Sharing System in both C++ (fully working) and Smalltalk (work in progress), demonstrating key Object-Oriented Programming principles: encapsulation, inheritance, and polymorphism.
+This repository contains implementations of a Ride Sharing System in both C++ and GNU Smalltalk, demonstrating key Object-Oriented Programming principles: encapsulation, inheritance, and polymorphism.
 
 ## Project Structure
 
 ```
 .
-├── cpp/                    # C++ implementation (Working)
+├── cpp/                    # C++ implementation
 │   ├── CMakeLists.txt     # CMake build configuration
 │   ├── Driver.cpp/h       # Driver class implementation
 │   ├── PremiumRide.cpp/h  # Premium ride class
 │   ├── Ride.cpp/h         # Base ride class
 │   ├── Rider.cpp/h        # Rider class
 │   ├── StandardRide.cpp/h # Standard ride class
-│   └── main.cpp          # Main program
-├── clean_st/             # GNU Smalltalk implementation (Work in Progress)
-│   ├── Driver.st
-│   ├── main.st
-│   ├── PremiumRide.st
-│   ├── Ride.st
-│   ├── Rider.st
-│   └── StandardRide.st
-└── docs/                 # Documentation
+│   └── main.cpp           # Main program
+├── clean_st/              # GNU Smalltalk implementation
+│   ├── Driver.st          # Driver class
+│   ├── main.st            # Main program
+│   ├── PremiumRide.st     # Premium ride class
+│   ├── Ride.st            # Base ride class
+│   ├── Rider.st           # Rider class
+│   └── StandardRide.st    # Standard ride class
+└── converted_st/          # Converted Smalltalk files
+    ├── Driver.st          # Converted Driver class
+    ├── main.st            # Converted main program
+    ├── PremiumRide.st     # Converted Premium ride class
+    ├── Ride.st            # Converted base ride class
+    ├── Rider.st           # Converted Rider class
+    └── StandardRide.st    # Converted Standard ride class
 ```
 
 ## Implementation Details
@@ -63,14 +69,27 @@ This repository contains implementations of a Ride Sharing System in both C++ (f
    ./ride_sharing_system
    ```
 
-### Smalltalk Implementation (Work in Progress)
+### GNU Smalltalk Implementation
 
-The Smalltalk implementation is provided in two versions:
+The Smalltalk implementation uses GNU Smalltalk and can be run using Docker for consistent execution across platforms. The code is available in two directories:
+- `clean_st/`: Main Smalltalk implementation directory
+- `converted_st/`: Contains converted Smalltalk files (if you need to convert between different Smalltalk dialects)
 
-1. **GNU Smalltalk Version** (in `clean_st/`)
-   - Contains the basic implementation
-   - Classes: Ride, StandardRide, PremiumRide, Driver, and Rider
-   - Note: This is a work in progress and may require debugging
+1. Build and Run using Docker:
+   ```bash
+   cd clean_st
+   docker build -t ride-sharing-st .
+   docker run -it ride-sharing-st
+   ```
+
+2. Alternative: Run with GNU Smalltalk directly (if installed):
+   ```bash
+   cd clean_st
+   gst -f main.st
+   ```
+
+
+
 
 2. **Requirements for GNU Smalltalk:**
    - GNU Smalltalk runtime
@@ -84,7 +103,7 @@ The Smalltalk implementation is provided in two versions:
      main.st
      ```
 
-Note: While the C++ implementation is fully functional, the Smalltalk implementation is provided for academic purposes and may require additional work to run successfully. The code structure and object-oriented principles are demonstrated in both implementations.
+
 
 ## Testing
 
@@ -149,9 +168,142 @@ The main programs in both implementations demonstrate:
 5. Updating driver ratings
 6. Displaying system information
 
+## Sample Output
+
+### C++ Implementation Output
+```
+=== Driver Information ===
+Driver ID: D001
+Name: John Smith
+Rating: 4.9
+Total rides: 2
+Total earnings: $32.2
+
+Driver ID: D002
+Name: Jane Doe
+Rating: 4.95
+Total rides: 2
+Total earnings: $44.45
+
+=== Rider Information ===
+Rider ID: R001
+Name: Alice Brown
+Total rides: 2
+Total spent: $45.85
+
+Standard Ride Details:
+- Ride ID: SR001
+- Pickup: 123 Main St
+- Dropoff: 456 Oak Ave
+- Distance: 5.5 miles
+- Fare: $11.00
+- Rate per mile: $2.00
+
+Premium Ride Details:
+- Ride ID: PR002
+- Pickup: 999 Hill Rd
+- Dropoff: 888 Valley Dr
+- Distance: 7.1 miles
+- Fare: $34.85
+- Rate per mile: $3.50
+- Luxury fee: $10.00
+```
+
+### GNU Smalltalk Implementation Output
+```
+=== Driver Information ===
+Driver: D001
+Name: John Smith
+Rating: 4.9
+Total rides: 2
+Total earnings: $32.20
+
+Driver: D002
+Name: Jane Doe
+Rating: 4.95
+Total rides: 2
+Total earnings: $44.45
+
+=== Rider Information ===
+Rider: Alice Brown (R001)
+Total rides: 2
+Total spent: $45.85
+
+Standard Ride: SR001
+Pickup: 123 Main St
+Dropoff: 456 Oak Ave
+Distance: 5.5 miles
+Fare: $11.00
+Rate per mile: $2.00
+
+Premium Ride: PR002
+Pickup: 999 Hill Rd
+Dropoff: 888 Valley Dr
+Distance: 7.1 miles
+Fare: $34.85
+Rate per mile: $3.50
+Luxury fee: $10.00
+```
+
 ## Contributing
 
-Feel free to submit issues and enhancement requests!
+I welcome contributions to improve both the C++ and Smalltalk implementations. Here's how you can contribute:
+
+### Getting Started
+
+1. Fork the repository
+2. Create a new branch for your feature:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Make your changes
+4. Submit a pull request
+
+### Contribution Guidelines
+
+1. **Code Style**
+   - C++: Follow the existing style (indentation, naming conventions)
+   - Smalltalk: Use standard Smalltalk conventions
+   - Keep methods focused and concise
+   - Add comments for complex logic
+
+2. **Adding Features**
+   - Implement in both C++ and Smalltalk when possible
+   - Update test cases accordingly
+   - Document new features in README.md
+   - Follow existing patterns for consistency
+
+3. **Bug Fixes**
+   - Clearly describe the bug in your PR
+   - Include steps to reproduce
+   - Add test cases to prevent regression
+
+4. **Documentation**
+   - Update README.md for significant changes
+   - Include code examples where helpful
+   - Document any new dependencies
+
+### Testing
+
+1. For C++ changes:
+   - Ensure all tests pass
+   - Add new tests for new features
+   - Verify build works with provided CMake configuration
+
+2. For Smalltalk changes:
+   - Test with both clean_st and converted_st versions
+   - Verify Docker execution works
+   - Test with native GNU Smalltalk if possible
+
+### Pull Request Process
+
+1. Update documentation to reflect changes
+2. Ensure your code builds without errors
+3. Write clear commit messages
+4. Reference any related issues
+5. Wait for code review
+
+For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
